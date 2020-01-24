@@ -1,5 +1,7 @@
-<p>You have {{bookmarkObj.bookmark.length}} bookmarks</p>
-<div id="bookmarkBox" style="display: flex; flex-direction: column;
+
+<button class="btn btn-outline-light my-2 my-sm-0" style="margin-left: 10%"  (click)="toggle()" type="submit"> <i  class="fa fa-bookmark fa_custom fa-2x"></i>{{buttonName}}</button>
+
+<div id="bookmarkBox" [hidden]="!show" style="display: flex; flex-direction: column;
     justify-content: space-between;">
 
 </div>

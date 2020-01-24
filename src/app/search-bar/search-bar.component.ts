@@ -24,7 +24,10 @@ export class SearchBarComponent implements OnInit {
     this.service.changeMessage(search.value);
   }
 
-  addHistory() {
+  addHistory(dataToSave) {
+    this.historyObj.youtube.push('"{"url":' + dataToSave.value + '}"');
+    localStorage.setItem('history', JSON.stringify(this.historyObj));
+    console.log(this.historyObj);
   }
 
 }

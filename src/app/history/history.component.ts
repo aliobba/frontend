@@ -24,17 +24,18 @@ export class HistoryComponent implements OnInit {
         localStorage.setItem('history', JSON.stringify(this.historyObj));
       }
       console.log(this.historyObj.youtube);
-      this.historyObj.youtube.map(video => {
-        video = video.replace('watch?v=', 'embed/') ;
-        video = video.substring(8 , video.length - 2 );
-        console.log('hello');
-        const iframe = document.createElement('iframe');
-        document.getElementById('historyBox').appendChild(iframe);
-        console.log(iframe);
-        iframe.src = video;
-        console.log(video);
-      });
     }, error => console.log(error) );
+    this.historyObj = JSON.parse(localStorage.getItem('history'));
+    this.historyObj.youtube.map(video => {
+      video = video.replace('watch?v=', 'embed/') ;
+      video = video.substring(8 , video.length - 2 );
+      console.log('hello');
+      const iframe = document.createElement('iframe');
+      document.getElementById('historyBox').appendChild(iframe);
+      console.log(iframe);
+      iframe.src = video;
+      console.log(video);
+    });
   }
 
 }

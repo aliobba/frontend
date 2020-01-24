@@ -8,7 +8,7 @@ import {History} from 'src/app/model/history';
 })
 export class ServiceService {
 
-  private baseUrl = 'http://localhost:8000';
+  private baseUrl = 'http://127.0.0.1:8000';
 
   private messageSource = new BehaviorSubject('default');
   public currentMessage = this.messageSource.asObservable();

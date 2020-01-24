@@ -34,9 +34,11 @@ export class VideoViewComponent implements OnInit {
 
 
   addToBookMark() {
-    this.bookmarkObj.bookmark.push(this.message);
-    localStorage.setItem('bookmark', JSON.stringify(this.bookmarkObj));
-    console.log(this.bookmarkObj);
+    if(this.message != null){
+      this.bookmarkObj.bookmark.push(this.message);
+      localStorage.setItem('bookmark', JSON.stringify(this.bookmarkObj));
+      console.log(this.bookmarkObj);
+    }
   }
 
 }

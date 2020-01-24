@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ServiceService} from '../service/service.service';
 import {History} from '../model/history';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -12,9 +13,8 @@ export class SearchBarComponent implements OnInit {
   search: string;
   historyObj = { youtube: [] };
   constructor(private service: ServiceService) { }
-
+ form: FormGroup;
   ngOnInit() {
-
     if (localStorage.getItem('history') !== null) {
       this.historyObj = JSON.parse(localStorage.getItem('history'));
     }

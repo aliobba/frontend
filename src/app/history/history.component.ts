@@ -15,16 +15,7 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit() {
     //localStorage.removeItem('history');
-    this.service.getAll().subscribe(data => {
-      console.log(data);
-      // tslint:disable-next-line:forin
-      for ( const i in data ) {
-        this.historyObj.youtube.push(JSON.stringify(data[i]));
-        console.log(this.historyObj);
-        localStorage.setItem('history', JSON.stringify(this.historyObj));
-      }
-      console.log(this.historyObj.youtube);
-    }, error => console.log(error) );
+
     this.historyObj = JSON.parse(localStorage.getItem('history'));
     this.historyObj.youtube.map(video => {
       video = video.replace('watch?v=', 'embed/') ;

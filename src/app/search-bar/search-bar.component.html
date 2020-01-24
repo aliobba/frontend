@@ -1,1 +1,10 @@
-<p>search-bar works!</p>
+
+<form class="form-inline">
+  <input  class="form-control mr-sm-2" style="width: 500px" type="search" placeholder="Search" aria-label="Search" #Search [(ngModel)]="search" name="search" >
+
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)="send(Search);addHistory(Search)"  type="submit">Search</button>
+
+
+</form>
+
+

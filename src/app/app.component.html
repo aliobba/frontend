@@ -6,18 +6,37 @@
 
   <div class="site-wrapper-inner">
 
-    <div class="cover-container">
 
-      <div class="masthead clearfix">
+
+
+
+      <div class="masthead">
         <div class="inner">
-          <app-search-bar></app-search-bar>
+
+          <nav class="nav nav-masthead">
+            <app-search-bar></app-search-bar>
+          </nav>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+
+          <app-history></app-history>
+
+        </div>
+        <div class="col-6">
+          <div class="inner cover">
+            <app-video-view></app-video-view>
+          </div>
+        </div>
+        <div class="col-3">
+
+          <app-bookmarks></app-bookmarks>
 
         </div>
       </div>
 
-      <div class="inner cover">
-        <app-video-view></app-video-view>
-      </div>
 
       <div class="mastfoot">
         <div class="inner">
@@ -25,7 +44,8 @@
         </div>
       </div>
 
-    </div>
+
+
 
   </div>
 

@@ -12,6 +12,7 @@ export class VideoViewComponent implements OnInit {
   constructor(private hostElement: ElementRef, private service: ServiceService) { }
 
   bookmarkObj = { bookmark: [] };
+
   message: string;
 
   ngOnInit() {
@@ -21,6 +22,9 @@ export class VideoViewComponent implements OnInit {
         this.message = message.replace('watch?v=', 'embed/') ;
         const iframe = this.hostElement.nativeElement.querySelector('iframe');
         iframe.src = this.message;
+        const postData = { url: message };
+        console.log(postData);
+        this.service.insert(postData);
       }
     });
     if (localStorage.getItem('bookmark') !== null) {
